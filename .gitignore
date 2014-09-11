@@ -1,2 +1,5 @@
 #ignore wiki pages as to not clog up git commits
 dokuwiki/data/pages/
+
+#tempfiles
+*.sw*
