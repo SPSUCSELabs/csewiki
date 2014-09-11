@@ -1,9 +1,9 @@
 <?php
 /* main page
-header("Location:main.php?pageid=home");
 */
+header("Location:dokuwiki");
 
 /* construction page 
-*/
 header("Location:construction.html");
+*/
 ?>
