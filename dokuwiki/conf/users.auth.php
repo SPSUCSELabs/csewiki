@@ -9,4 +9,4 @@
 # login:passwordhash:Real Name:email:groups,comma,seperated
 
 
-root:$1$LOYhyZE4$BHGFezqkrExKbukRiNYME0:Mike Wazowski:you@example.com:admin,user
+root:$1$3ENGzo3D$XWeAwJwLiWwl.ZnShok59.:csewiki root:admin@csewiki.spsu.edu:admin,user
