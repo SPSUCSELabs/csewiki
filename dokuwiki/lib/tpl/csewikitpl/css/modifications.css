@@ -3,23 +3,10 @@ body {
     padding-bottom: 40px;
 }
 
-/* offset h1 targets with top navbar so that navigation anchor links line up */
-.page h1, .page h2, .page h3, .page h4, .page h5 {
-	padding-top: 72px;
-	margin-top: -52px;
-}
-
 /* Give the side TOC some space between top bar */
 .page {
     padding: 15px 0;
 }
-
-/*
- *  * Side navigation
- *   *
- *    * Scrollspy and affixed enhanced navigation to highlight sections and secondary
- *     * sections of docs content.
- *      */
 
 /* By default it's not affixed in mobile views, so undo that */
 .bs-sidebar {
@@ -39,7 +26,8 @@ body {
 }
 
 /* All levels of nav */
-.bs-sidebar .nav > li > a {
+.bs-sidebar .nav > li > a 
+{
   display: block; 
   padding: 5px 20px;
 }
@@ -47,15 +35,16 @@ body {
 .bs-sidebar .nav > li > a:hover,
 .bs-sidebar .nav > li > a:focus {
   text-decoration: none;
-  background-color: #e5e3e9;
-  border-right: 1px solid #dbd8e0;
+  background-color: #6db33f;
+	border-radius: 4px;
 }
 .bs-sidebar .nav > .active > a,
 .bs-sidebar .nav > .active:hover > a,
 .bs-sidebar .nav > .active:focus > a {
   font-weight: bold;
-  background-color: transparent;
-  border-right: 1px;
+	background-color: #222222;
+	border: 1px solid #0c0d0e;
+	border-radius: 4px;
 }
 
 /* Nav: second level (shown on .active) */

@@ -48,7 +48,7 @@ $showTOC = ($ACT == "show") && tpl_toc(true);
      	.dokuwiki should always be in one of the surrounding elements (e.g. plugins and templates depend on it) */ ?>
 	<div id="dokuwiki__site">
 		<div id="dokuwiki__top" class="dokuwiki site mode_<?php echo $ACT ?>"></div>
-    	<nav class="navbar navbar-inverse navbar-fixed-top">
+    	<nav class="navbar navbar-default navbar-fixed-top">
     		<div class="container">
 				<div class="navbar-header">
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
@@ -58,8 +58,8 @@ $showTOC = ($ACT == "show") && tpl_toc(true);
           </button>
 					<a class="navbar-brand" href="./"><?php echo $conf['title']; ?></a>
  				</div>
-           		<div class="collapse navbar-collapse">
-           			<ul class="nav navbar-nav navbar-left">
+        <div class="collapse navbar-collapse">
+        	<ul class="nav navbar-nav navbar-left">
 						<?php tpl_includeFile('nav.html');?>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">

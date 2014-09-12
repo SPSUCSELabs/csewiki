@@ -10,7 +10,7 @@
 		$('#config__manager tr > td.label').removeClass('label');
 	
 		// add text-primariy to all header tags (h1,h2 etc) to the content
-		$('.page > :header').addClass('text-primary');
+		//$('.page > :header').addClass('text-primary');
 	
 		// make edit and other submit buttons to show in bootstrap style
 		$('input[type=\"submit\"], input[type=\"reset\"]').removeClass('button');
@@ -18,7 +18,7 @@
 		$('input[value=\"Edit\"][type=\"submit\"]').addClass('pull-right');
 
 		// Add sroll behavior to TOC
-		$('body').scrollspy({ target: '.bs-sidebar'});
+//		$('body').scrollspy({ target: '.bs-sidebar'});
 
 		// Put right width to the sidebar element. This is because it's "fixed" and therefor does not inherrit it's parents width
 		$('.bs-sidebar').css('width', $('.col-md-3').width() + 'px');
