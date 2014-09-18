@@ -1,75 +1,133 @@
-body {
-    padding-top: 46px;
-    padding-bottom: 40px;
-}
-
-/* Give the side TOC some space between top bar */
-.page {
-    padding: 15px 0;
-}
-
-/* By default it's not affixed in mobile views, so undo that */
-.bs-sidebar {
-  padding-top: 15px;
-  position: fixed;
-}
-
-/* First level of nav */
-.bs-sidenav {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding-top:    10px;
-  padding-bottom: 10px;
-  text-shadow: 0 1px 0 #fff;
-  background-color: #f7f5fa;
-  border-radius: 5px;
-}
-
-/* All levels of nav */
-.bs-sidebar .nav > li > a 
+body
 {
-  display: block; 
-  padding: 5px 20px;
+	background-color: #eee;
 }
 
-.bs-sidebar .nav > li > a:hover,
-.bs-sidebar .nav > li > a:focus {
-  text-decoration: none;
-  background-color: #6db33f;
-	border-radius: 4px;
-}
-.bs-sidebar .nav > .active > a,
-.bs-sidebar .nav > .active:hover > a,
-.bs-sidebar .nav > .active:focus > a {
-  font-weight: bold;
-	background-color: #222222;
-	border: 1px solid #0c0d0e;
-	border-radius: 4px;
+.navbar
+{
+	border-radius: 0px;
+	background-color: #333 !important;
+	border-color: #222 !important;
 }
 
-/* Nav: second level (shown on .active) */
-.bs-sidebar .nav .nav {
-  display: none; /* Hide by default, but at >768px, show it */
-  margin-bottom: 8px;
-}
-.bs-sidebar .nav .nav > li > a {
-  padding-top:    3px;
-  padding-bottom: 3px;
-  padding-left: 30px;
-  font-size: 90%;
+.navbar-brand,
+.navbar-nav > li > a
+{
+	/*color: #6DB33F !important;*/
+	color: #4FC700 !important;
 }
 
-.bs-sidebar .nav > .active > ul {
-   display: block;
+/*
+ * fix the right padding to center navbar with 
+ * page content (next 3 css entries)
+ *
+ */
+.navbar > .container
+{
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
-@media screen and (max-width: 993px) { /* height <= 500 px */
-
-	.bs-sidebar {
-		display: none;
-	}
+#navbarcontent
+{
+	padding-right: 0px;
 }
 
-.text-right {
-	text-align: right;
+/*
+ *#navbarcontent > .navbar-form
+ *{
+ *  padding-right: 0px;
+ *}
+ */
+
+#pagecontent > h1
+{
+	margin-top: 0px;
+}
+
+#pagecontent
+{
+	border-right: thin solid #ddd;
+	border-left: thin solid #ddd;
+	padding-right: 1em;
+	padding-left: 1em;
+}
+
+#toc
+{
+	/*margin-top: 20px;*/
+
+	margin-bottom: 0px;
+	/*border-left: thin solid #aaa;*/
+	/*padding-left: 1em;*/
+}
+
+#toc ul 
+{
+	/*display: inline-block;*/
+	padding-left: 2em;
+	list-style: none inside;
+}
+
+#toc_top
+{
+	padding-left: 0px !important;
+	margin-bottom: 0px;
+}
+
+#toc_top a
+{
+	color: #111 !important; /*#4FC700 !important;*/
+}
+
+#toc_title
+{
+	color: #222 !important;
+	/*margin-top: 0px;*/
+}
+
+#tstimg
+{
+	margin-left: 1em;
+	float: right;
+}
+
+#news_content
+{
+	color: #111 !important;/*#4FC700 !important;*/
+}
+
+/*
+ * sidebar settings
+ */
+#sidebar .panel-heading
+{
+	background-color: #333 !important;
+	border: none !important;
+}
+
+#sidebar .panel-heading h3
+{
+	color: #4FC700 !important;
+}
+
+#sidebar .panel-body
+{
+	background-color: #d0d0d0;
+	border-bottom: thin solid #aaa;
+	border-right: thin solid #aaa;
+	border-left: thin solid #aaa;
+}
+
+/*
+ * dropdown menu settings
+ */
+.dropdown-menu
+{
+	background-color: #ddd;
+}
+
+.dropdown-menu a:hover
+{
+	background-color: #6DB33F !important;
 }
