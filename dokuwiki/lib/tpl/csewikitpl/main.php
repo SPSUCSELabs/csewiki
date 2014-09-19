@@ -17,8 +17,7 @@
 	<link href="<?php echo tpl_getMediaFile(array("css/bootstrap.min.css")); ?>" rel="stylesheet">
 	<link href="<?php echo tpl_getMediaFile(array("css/modifications.css")); ?>" rel="stylesheet">
 	<script src="<?php echo tpl_getMediaFile(array("js/jquery-1.11.0.min.js")); ?>"></script>
-	<script src="<?php echo tpl_getMediaFile(array("js/bootstrap.min.js")); ?>"></script>
-	<script src="<?php echo tpl_getMediaFile(array("js/modifications.js")); ?>"></script>
+
 	<?php tpl_metaheaders(); ?>
 </head>
 <body>
@@ -107,6 +106,7 @@
 </footer>
 </div>
 <!-- /dokuwiki__site -->
-
+<script src="<?php echo tpl_getMediaFile(array("js/bootstrap.min.js")); ?>"></script>
+<script src="<?php echo tpl_getMediaFile(array("js/modifications.js")); ?>"></script>
 </body>
 </html>
