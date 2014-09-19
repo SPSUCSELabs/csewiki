@@ -56,28 +56,48 @@ function _tpl_csewikitoc($data)
 		return '';
 	}
 
-	$curlevel = 1;
-	
-	$out = '<div class="bs-sidebar" role="navigation">';
-		$out .= '<ul class="nav">';
-			foreach($data as $tocitem)
-			{
-				if ($tocitem['level'] > $curlevel)
-					$out .= '<ul>';
-				elseif($tocitem['level'] < $curlevel)
-					$out .= '</ul>';
+	$curlevel = 2;//the current level starts at level 2 because we're skipping the page title
+	$out = '<ul id="toc_top">';
+	$heading_num = array(1=>0,2=>0);
 
-				isset($tocitem['hid']) ? $href = '#'.$tocitem['hid'] : $href = $tocitem['link'];
+	foreach($data as $tocitem)
+	{
+		/** skip level one as it is the page title */
+		if($tocitem['level'] == 1)
+			continue;
 
-				$out .= "<li><a href='".$href."'>".$tocitem['title'].":".$tocitem['level']."</a></li>";
-				$curlevel = $tocitem['level'];
-			}
-			for($i = 1; $i < $curlevel; $i++)
-			{
-				$out .= '</ul>';
-			}
+		if ($tocitem['level'] > $curlevel)
+			$out .= '<ul>';
+		elseif($tocitem['level'] < $curlevel)
+		{
+			//reset the heading 
+			$heading_num[$curlevel-1] = 0;
+			$out .= '</ul>';
+		}
+		$curlevel = $tocitem['level'];
+		
+		isset($tocitem['hid']) ? $href = '#'.$tocitem['hid'] : $href = $tocitem['link'];
+
+		$out .= "<li>";
+
+		/** set the heading number */
+		$heading_num[$curlevel-1] += 1;
+
+		/** print out the heading number */
+		$headtxt = implode(".",array_slice($heading_num,0,2,true));
+		if($heading_num[3] != 0)
+			$headtxt .= ".".implode(".",array_slice($heading_num,2,NULL,true));
+		$out .= "<b>".$headtxt."</b> ";
+
+		/** printout the text of the heading */
+		$out .= "<a href='".$href."'>".$tocitem['title']."</a>";
+		$out .= "</li>";
+	}
+	for($i = 1; $i < $curlevel; $i++)
+	{
 		$out .= '</ul>';
-	$out .= "</div>";
+	}
+	$out .= '</ul>';
 
 	return $out;
 }
@@ -170,7 +190,7 @@ function _tpl_output_page_tools($showTools = true, $element = 'li'){
 	global $lang;
 
 	if ($showTools) {
-
+			echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown">Page Tools<b class="caret"></b></a>';
 			echo '<ul class="dropdown-menu">';
 
 			tpl_action('edit', 1, $element);
@@ -198,9 +218,9 @@ function _tpl_output_search_bar()
 	// don't print the search form if search action has been disabled
 	if(!actionOk('search')) return false;
 
-	print '<form action="'.wl().'" accept-charset="utf-8" class="search" id="dw__search" method="get"><div class="no">';
+	print '<form action="'.wl().'" accept-charset="utf-8" class="search	navbar-form navbar-right" id="dw__search" method="get"><div class="no">';
 	print '<input type="hidden" name="do" value="search" />';
-		print ' <div class="form-group">';
+		print '<div class="form-group">';
 		print '<input type="text" placeholder="'.$lang['btn_search'].'" ';
 			if($ACT == 'search') print 'value="'.htmlspecialchars($QUERY).'" ';
 			if(!$autocomplete) print 'autocomplete="off" ';
@@ -212,7 +232,6 @@ function _tpl_output_search_bar()
 	if($ajax) print '<div id="qsearch__out" class="ajax_qsearch JSpopup"></div>';
 	print '</div></form>';
 	return true;
-
 }
 
 /**
@@ -227,7 +246,8 @@ function _tpl_userinfo($element='li') {
 	global $INFO;
 
  	if(isset($_SERVER['REMOTE_USER'])) {
-	  	echo '<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">'.hsc($INFO['userinfo']['name']).'<b class="caret"></b></a>';
+	  echo '<li class="dropdown">';
+		echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown">'.hsc($INFO['userinfo']['name']).'<b class="caret"></b></a>';
  		echo '<ul class="dropdown-menu">';
 		tpl_action('admin', 1, $element);
  		tpl_action('profile', 1, $element);

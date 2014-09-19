@@ -4,4 +4,4 @@
  *
  */
 
-$conf['bootswatch'] = 'default';
+//$conf['bootswatch'] = 'default';

@@ -29,50 +29,39 @@ $showTOC = ($ACT == "show") && tpl_toc(true);
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
     <?php tpl_includeFile('meta.html') ?>
-    <link href="<?php echo tpl_getMediaFile(array("css/bootstrap-.min.css")); ?>" rel="stylesheet">
+    <link href="<?php echo tpl_getMediaFile(array("css/bootstrap.min.css")); ?>" rel="stylesheet">
     <link href="<?php echo tpl_getMediaFile(array("css/modifications.css")); ?>" rel="stylesheet">
 </head>
 
 <body>
-    <?php /* with these Conditional Comments you can better address IE issues in CSS files,
-             precede CSS rules by #IE6 for IE6, #IE7 for IE7 and #IE8 for IE8 (div closes at the bottom) */ ?>
-    <!--[if IE 6 ]><div id="IE6"><![endif]--><!--[if IE 7 ]><div id="IE7"><![endif]--><!--[if IE 8 ]><div id="IE8"><![endif]-->
-
-    <?php 
-	/* 	The "dokuwiki__top" id is needed somewhere at the top, because that's where the "back to top" button/link links to 
-    	classes mode_<action> are added to make it possible to e.g. style a page differently if it's in edit mode,
-        See http://www.dokuwiki.org/devel:action_modes for a list of action modes 
-     	.dokuwiki should always be in one of the surrounding elements (e.g. plugins and templates depend on it) */ ?>
 	<div id="dokuwiki__site">
 		<div id="dokuwiki__top" class="dokuwiki site mode_<?php echo $ACT ?>"></div>
-    	<nav class="navbar navbar-default navbar-fixed-top">
-    		<div class="container">
-				<div class="navbar-header">
-          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-					<a class="navbar-brand" href="./"><?php echo $conf['title']; ?></a>
- 				</div>
-        <div class="collapse navbar-collapse">
-        	<ul class="nav navbar-nav navbar-left">
-						<?php tpl_includeFile('nav.html');?>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Options<b class="caret"></b></a>
-           					<?php _tpl_output_page_tools($showTools, 'li'); ?>
-						</li>
-						<?php _tpl_userinfo(); ?>
-						<li>
-							<div class="navbar-form form-group" role="search">
-								<?php _tpl_output_search_bar(); ?>
-							</div>
-						</li>
-					</ul>
-				</div>
-           	</div> <!-- container -->
-		</nav> <!-- navbar -->
+		<nav class="navbar navbar-inverse" role="navigation">
+			<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarcontent">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><?php echo $conf['title']; ?></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbarcontent">
+				<?php _tpl_output_search_bar(); ?>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<?php _tpl_output_page_tools(true, 'li'); ?>
+					</li>
+					<?php /** a dropdown menu is created in this function, otherwise a login
+					button is displayed */?>
+					<?php _tpl_userinfo(); ?>
+				</ul>
+			</div>
+			<!-- /navbarcontent -->
+			</div>
+			<!-- /navbar -->
+		</nav>
 
 	    <?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
     	<?php tpl_includeFile('header.html') ?>

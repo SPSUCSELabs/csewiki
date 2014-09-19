@@ -28,17 +28,23 @@ body
 	padding-right: 0px;
 }
 
+.navbar-nav > .open > a:hover,
+.navbar-nav > .open > a:focus
+{
+	background-color: #222 !important;
+}
+
+#brand-img
+{
+	width: 2em;
+	display: inline;
+	margin-top: -.3em;
+}
+
 #navbarcontent
 {
 	padding-right: 0px;
 }
-
-/*
- *#navbarcontent > .navbar-form
- *{
- *  padding-right: 0px;
- *}
- */
 
 #pagecontent > h1
 {
@@ -124,7 +130,7 @@ body
  */
 .dropdown-menu
 {
-	background-color: #ddd;
+	background-color: #e8e8e8 !important;
 }
 
 .dropdown-menu a:hover
