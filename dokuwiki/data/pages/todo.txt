@@ -1,0 +1,12 @@
+====== Todo ======
+This is the CSEWiki's todo list. you must have proper login permissions to edit this page. 
+
+===== Tasks Todo =====
+  * finish the template theme (see: [[http://csewiki.spsu.edu/csewikipgtst]])
+  * integrate new template into wiki
+  * test new template 
+  * add UI features (page->pdf converter, WordDoc->page uploader, etc.... see [[suggest|Suggestions Page]]. 
+  * update ACL
+  * add writers for content
+
+===== Tasks Accomplished =====
