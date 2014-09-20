@@ -11,3 +11,4 @@ $plugins['authpgsql'] = 0;
 $plugins['popularity'] = 0;
 $plugins['authmysql'] = 0;
 $plugins['authad'] = 0;
+$plugins['markdowku'] = 0;

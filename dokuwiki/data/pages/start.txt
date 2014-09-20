@@ -7,31 +7,56 @@ The CSEWiki is not yet ready for writers. Check back at a later time. (In the me
 
 ==== Creating Pages ====
 If you would like to write a page or two for the wiki so that when it is online you can can do so. Follow these instructions:
-  - Create a directory (folder) on your computer to hold your pages. Each page will be a <code>.txt</code> file.
+  - Create a directory (folder) on your computer to hold your pages. Each page will be a `.txt` file.
   - Write each page in its own file. See the [[https://www.dokuwiki.org/wiki:syntax#code_blocks|dokuwiki guide]] on writing pages. 
-  - When you're done writing zip the directory containing all of your pages and email them to <code>nharvey@spsu.edu</code>
+  - When you're done writing zip the directory containing all of your pages and email them to `nharvey@spsu.edu`
   - You're done! Your pages will be imported in a couple of days. In the mean time feel free to browse around the developmental wiki and comment on the changes (or suggest new features if you'd like) at the [[suggest|suggestions page]].
 ===== Contributing to the CSEWiki =====
 The CSEWiki is an open source project. If you wish to contribute to the CSEWiki please clone the project at: 
 
 <code>
-git clone git@csewiki.spsu.edu
+$ git clone git@csewiki.spsu.edu
 </code>
 
 **Please read the below notes carefully before contributing. If your pull requests do not follow the below standards then your changes may not be considered**.
 
 ==== Local Setup ====
-=== Apache ===
+To work on the CSEWiki you need to have a working setup on your local computer. The below instructions are geared toward Linux based machines, however you can work on Windows or Mac.
+=== Git ===
+> Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. 
+
+You must install [git][] to develop for the CSEWiki. See their [downloads page][gitDownload] for more information on how to set up git for your operating system. If you are new to git read their [free online book][gitBook] to get started. 
+
+Once you have git installed use the above address to clone the CSEWiki git repository.
+
+=== Web Server ===
+You must have Apache or some other kind of web-server that supports PHP 5.1.2 or later. Make sure that when setting up the server that you can access files on your home directory as you will be using Git to manage your software. If you're on Linux or Mac see your distribution's instructions for installing a web server and enabling PHP on it (Apache is recommended but not required). For Windows users, it is recommended that you install [XAMPP][].
+
 === User Permissions ===
+**This section is for Linux users. If you are experiencing issues with user permissions and you are not on Linux please email the admin at `nharvey@spsu.edu`.**
+
+The wiki engine that CSEWiki  runs on is Dokuwiki. Dokuwiki requires having read/write permissions for all files in the `dokuwiki` directory of your local csewiki repository; which in turn means that your webserver needs these same permissions. Because git uses the permissions set by your [umask][] you need to make sure that you have set up your default permissions to allow for the web server to have read/write permissions when you pull changes from the git server. Below is a recommended setup:
+
+set your umask to allow for groups to read/write files
+  $ umask g+rw
+change ownership of all the files in the csewiki repository to `user:http` where `user` is your user name `http` is the group that Apache (or other web server) runs under.
+  $ cd /path/to/csewiki/repository
+  $ chown -R user:http ./*
+if some of your files do not have their permissions set to group readable/writable then do so now. //NOTE: you may need sudo permissions to override some of the current file permissions. This situation is rare and depends on the distribution you're working in//
+  $ chmod -R g+rw ./* 
+
+A git deployment hook will soon be created to make this task easier.
+
 === Web Browsers ===
 ==== Remote Setup ====
 ==== Branches ====
 ==== Coding Standards ====
 
-
-
-
-
+[XAMPP]: https://www.apachefriends.org/index.html
+[git]: http://git-scm.com/
+[gitDownloads]: http://git-scm.com/download
+[gitBook]: http://git-scm.com/book
+[umask]: https://en.wikipedia.org/wiki/Umask
 ===== Section 2 =====
 Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. Fusce eget orci a orci congue vestibulum.
 

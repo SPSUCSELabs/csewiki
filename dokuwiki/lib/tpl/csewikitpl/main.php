@@ -34,7 +34,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="<?php wl(); ?>"><img id="brand-img" src="<?php echo ml('logo.png');?>" alt="<?php $conf['title'];?>" /><?php echo $conf['title']; ?></a>
+			<a class="navbar-brand" href="<?php echo wl(); ?>"><img id="brand-img" src="<?php echo ml('logo.png');?>" alt="<?php $conf['title'];?>" /><?php echo $conf['title']; ?></a>
 		</div>
 		<div class="collapse navbar-collapse" id="navbarcontent">
 			<?php _tpl_output_search_bar(); ?>
