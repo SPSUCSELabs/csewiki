@@ -1,2 +1,5 @@
 #tempfiles
 *.sw*
+
+#cache files
+*/cache/*
