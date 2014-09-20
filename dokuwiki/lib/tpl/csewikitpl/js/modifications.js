@@ -6,7 +6,7 @@
 	* @example $(selector).waitUntilExists(function);
 	*/
 	
-$.fn.waitUntilExists    = function (handler, shouldRunHandlerOnce, isChild) 
+$.fn.waitUntilExists = function (handler, shouldRunHandlerOnce, isChild) 
 {
 	var found       = 'found';
 	var $this       = $(this.selector);
@@ -25,6 +25,30 @@ $.fn.waitUntilExists    = function (handler, shouldRunHandlerOnce, isChild)
 	
 	return $this;
 }
+
+$.extend({
+    replaceTag: function (currentElem, newTagObj, keepProps) {
+        var $currentElem = $(currentElem);
+        var i, $newTag = $(newTagObj).clone();
+        if (keepProps) {//{{{
+            newTag = $newTag[0];
+            newTag.className = currentElem.className;
+            $.extend(newTag.classList, currentElem.classList);
+            $.extend(newTag.attributes, currentElem.attributes);
+        }//}}}
+        $currentElem.wrapAll($newTag);
+        $currentElem.contents().unwrap();
+        // return node; (Error spotted by Frank van Luijn)
+    }
+});
+
+$.fn.extend({
+    replaceTag: function (newTagObj, keepProps) {
+        this.each(function() {
+            $.replaceTag(this, newTagObj, keepProps);
+        });
+    }
+});
 
 /*
  * make collapseables close when switching to mobile mode
@@ -86,6 +110,14 @@ function cleanEditorPage()
 	});
 }
 
+function makeCodeTags()
+{
+	//replace all "pre code blocks with boostrap code blocks
+	$("pre.code").waitUntilExists(function()
+	{
+		$("pre.code").replaceTag('<code>',true);
+	});
+}
 
 $(function()
 {
@@ -94,6 +126,7 @@ $(function()
 	cleanConfigPage();
 	cleanEditorPage();
 	autoCollapse();
+	//makeCodeTags();
 });
 
 
