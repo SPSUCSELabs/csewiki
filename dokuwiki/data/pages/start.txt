@@ -2,13 +2,35 @@
 the CSEWiki is currently under developement. If you wish to make a suggestion please leave one on the [[suggest|suggestions page]]. 
 
 To view the progress of the wiki visit the [[todo|todo page]].
-===== Section 1 =====
-Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.
+===== Writing for the CSEWiki =====
+The CSEWiki is not yet ready for writers. Check back at a later time. (In the mean time you can write your pages in a text file and when the wiki is ready you can create your pages, see below for details). 
 
-  * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. 
-  * Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur a
-  * Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros
-  * Mauris vitae nisi at sem facilisis semper ac in est.
+==== Creating Pages ====
+If you would like to write a page or two for the wiki so that when it is online you can can do so. Follow these instructions:
+  - Create a directory (folder) on your computer to hold your pages. Each page will be a <code>.txt</code> file.
+  - Write each page in its own file. See the [[https://www.dokuwiki.org/wiki:syntax#code_blocks|dokuwiki guide]] on writing pages. 
+  - When you're done writing zip the directory containing all of your pages and email them to <code>nharvey@spsu.edu</code>
+  - You're done! Your pages will be imported in a couple of days. In the mean time feel free to browse around the developmental wiki and comment on the changes (or suggest new features if you'd like) at the [[suggest|suggestions page]].
+===== Contributing to the CSEWiki =====
+The CSEWiki is an open source project. If you wish to contribute to the CSEWiki please clone the project at: 
+
+<code>
+git clone git@csewiki.spsu.edu
+</code>
+
+**Please read the below notes carefully before contributing. If your pull requests do not follow the below standards then your changes may not be considered**.
+
+==== Local Setup ====
+=== Apache ===
+=== User Permissions ===
+=== Web Browsers ===
+==== Remote Setup ====
+==== Branches ====
+==== Coding Standards ====
+
+
+
+
 
 ===== Section 2 =====
 Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. Fusce eget orci a orci congue vestibulum.
