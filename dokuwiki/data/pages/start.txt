@@ -1,5 +1,5 @@
 ====== Welcome to the CSEWiki ======
-the CSEWiki is currently under developement. If you wish to make a suggestion please leave one on the [[suggest|suggestions page]]. 
+The CSEWiki is currently under developement. If you wish to make a suggestion please leave one on the [[suggest|suggestions page]]. 
 
 To view the progress of the wiki visit the [[todo|todo page]].
 ===== Writing for the CSEWiki =====
@@ -54,7 +54,7 @@ A git deployment hook will soon be created to make this task easier.
 
 [XAMPP]: https://www.apachefriends.org/index.html
 [git]: http://git-scm.com/
-[gitDownloads]: http://git-scm.com/download
+[gitDownload]: http://git-scm.com/download
 [gitBook]: http://git-scm.com/book
 [umask]: https://en.wikipedia.org/wiki/Umask
 ===== Section 2 =====
