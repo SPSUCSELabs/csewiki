@@ -110,13 +110,18 @@ function cleanEditorPage()
 	});
 }
 
-function makeCodeTags()
+function underlineMajorHeadings()
 {
-	//replace all "pre code blocks with boostrap code blocks
-	$("pre.code").waitUntilExists(function()
-	{
-		$("pre.code").replaceTag('<code>',true);
-	});
+	$("#pagecontent h2").after("<hr/>");
+}
+
+function fixEditButtons()
+{
+	//remove section highlight functionality
+	$("form.btn_secedit").removeClass("btn_secedit");
+
+	//add a clearer class below since they are pulled right
+	$('input[value=\"Edit\"][type=\"submit\"]').after("<div class='clearer'>");
 }
 
 $(function()
@@ -126,7 +131,8 @@ $(function()
 	cleanConfigPage();
 	cleanEditorPage();
 	autoCollapse();
-	//makeCodeTags();
+	underlineMajorHeadings();
+	fixEditButtons();
 });
 
 

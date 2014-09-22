@@ -11,7 +11,7 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
-	<title><?php tpl_pagetitle() ?>SPSU <?php echo strip_tags($conf['title']) ?></title>
+	<title>SPSU <?php echo strip_tags($conf['title']) ?>:<?php tpl_pagetitle() ?></title>
 	<?php echo tpl_favicon(array('favicon', 'mobile')) ?>
 	<?php tpl_includeFile('meta.html') ?>
 	<link href="<?php echo tpl_getMediaFile(array("css/bootstrap.min.css")); ?>" rel="stylesheet">

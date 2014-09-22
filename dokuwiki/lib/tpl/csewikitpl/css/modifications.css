@@ -49,6 +49,7 @@ body
 #pagecontent > h1
 {
 	margin-top: 0px;
+	text-align: center;
 }
 
 #pagecontent
@@ -57,6 +58,24 @@ body
 	border-left: thin solid #ddd;
 	padding-right: 1em;
 	padding-left: 1em;
+}
+
+#pagecontent h3,
+#pagecontent h4
+{
+	font-weight: bold;
+}
+
+#pagecontent h4
+{
+	margin-top: 2em;
+}
+
+#pagecontent hr
+{
+	margin-top: 0px;
+	border-color: #ddd;
+	height: auto !important;
 }
 
 #toc
@@ -145,3 +164,4 @@ body
 	max-width: 100%;
 	min-height: 32em !important;
 }
+
