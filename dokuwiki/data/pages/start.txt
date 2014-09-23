@@ -1,5 +1,7 @@
 ====== Welcome to the CSEWiki ======
-The CSEWiki is currently under developement. If you wish to make a suggestion please leave one on the [[suggest|suggestions page]]. 
+The SPSU CSEWiki exists to aid students in sharing information regarding the classes and labs of the CSE department here at SPSU. Common answers to tutoring related questions are located here, as well as essential aid to using the computers in the lab. If you are an employee of the CSE department you will also find manuals here. 
+
+If you wish to make a suggestion please leave one on the [[suggest|suggestions page]]. 
 
 To view the progress of the wiki visit the [[todo|todo page]].
 ===== Writing for the CSEWiki =====
@@ -25,9 +27,15 @@ To work on the CSEWiki you need to have a working setup on your local computer. 
 === Git ===
 > Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. 
 
-You must install [git][] to develop for the CSEWiki. See their [downloads page][gitDownload] for more information on how to set up git for your operating system. If you are new to git read their [free online book][gitBook] to get started. 
+You must install [git][] to develop for the CSEWiki. See their bove address to clone the CSEWiki git repository. [downloads page][gitDownload] for more information on how to set up git for your operating system. If you are new to git read their [free online book][gitBook] to get started. 
 
-Once you have git installed use the above address to clone the CSEWiki git repository.
+Once you have git installed use the below SSH address to clone the CSEWiki git repository.
+
+<code>
+$ git clone git@csewiki.spsu.edu
+</code>
+
+Next, setup your local web server and user permissions. Also see the section on the git branches for this project. 
 
 === Web Server ===
 You must have Apache or some other kind of web-server that supports PHP 5.1.2 or later. Make sure that when setting up the server that you can access files on your home directory as you will be using Git to manage your software. If you're on Linux or Mac see your distribution's instructions for installing a web server and enabling PHP on it (Apache is recommended but not required). For Windows users, it is recommended that you install [XAMPP][].
@@ -47,27 +55,11 @@ if some of your files do not have their permissions set to group readable/writab
 
 A git deployment hook will soon be created to make this task easier.
 
-=== Web Browsers ===
-==== Remote Setup ====
-==== Branches ====
 ==== Coding Standards ====
+Redirect: See [[Coding Standards | Coding Standards Page]]
 
 [XAMPP]: https://www.apachefriends.org/index.html
 [git]: http://git-scm.com/
 [gitDownload]: http://git-scm.com/download
 [gitBook]: http://git-scm.com/book
 [umask]: https://en.wikipedia.org/wiki/Umask
-===== Section 2 =====
-Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. Fusce eget orci a orci congue vestibulum.
-
-==== Subsection 1 ====
-Ut dolor diam, elementum et vestibulum eu, porttitor vel elit. Curabitur venenatis pulvinar tellus gravida ornare. Sed et erat faucibus nunc euismod ultricies ut id justo. Nullam cursus suscipit nisi, et ultrices justo sodales nec. Fusce venenatis facilisis lectus ac semper. 
-
-
-
-
-==== Subsection 2 ====
-Aliquam at massa ipsum. Quisque bibendum purus convallis nulla ultrices ultricies. Nullam aliquam, mi eu aliquam tincidunt, purus velit laoreet tortor, viverra pretium nisi quam vitae mi. Fusce vel volutpat elit. Nam sagittis nisi dui.
-
-===== Section 3 =====
-Aliquam at massa ipsum. Quisque bibendum purus convallis nulla ultrices ultricies. Nullam aliquam, mi eu aliquam tincidunt, purus velit laoreet tortor, viverra pretium nisi quam vitae mi. Fusce vel volutpat elit. Nam sagittis nisi dui.Ut dolor diam, elementum et vestibulum eu, porttitor vel elit. Curabitur venenatis pulvinar tellus gravida ornare. Sed et erat faucibus nunc euismod ultricies ut id justo. Nullam cursus suscipit nisi, et ultrices justo sodales nec. Fusce venenatis facilisis lectus ac semper. 
