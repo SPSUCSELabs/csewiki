@@ -9,7 +9,7 @@
 /conf/lang/*
 /conf/tpl/*
 .htaccess
-*.swp
+*.sw*
 *.bak
 *.old
 *~
@@ -17,6 +17,7 @@
 *.iml
 .idea/
 /data/attic/*
+/data/pages/*
 /data/cache/*
 /data/index/*
 /data/locks/*
