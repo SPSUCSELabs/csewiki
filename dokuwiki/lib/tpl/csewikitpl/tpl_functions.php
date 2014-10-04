@@ -269,3 +269,107 @@ function dw($message) {
 		}
 		print "<pre>";
 }
+
+
+//TODO: finish this function to work as supposed
+//builds the media tree for boostrap prettiness
+function csewiki_mediaTree()
+{
+	global $NS;
+	global $conf;
+	global $lang;
+
+	//copied from media_nstree();
+	$ns = $NS;
+	
+	// currently selected namespace
+	$ns  = cleanID($ns);
+	if(empty($ns))
+	{
+		global $ID;
+		$ns = (string)getNS($ID);
+	}
+	
+	$ns_dir  = utf8_encodeFN(str_replace(':','/',$ns));
+	
+	$data = array();
+	search($data,$conf['mediadir'],'search_index',array('ns' => $ns_dir, 'nofiles' => true));
+	
+	// wrap a list with the root level around the other namespaces
+	array_unshift($data, array('level' => 0, 'id' => '', 'open' =>'true','label' => $lang['mediaroot']));
+	
+	// insert the current ns into the hierarchy if it isn't already part of it
+	$ns_parts = explode(':', $ns);
+	$tmp_ns = '';
+	$pos = 0;
+	foreach ($ns_parts as $level => $part) 
+	{
+		if ($tmp_ns) $tmp_ns .= ':'.$part;
+		else $tmp_ns = $part;
+		
+		// find the namespace parts or insert them
+		while ($data[$pos]['id'] != $tmp_ns) 
+		{
+			if ($pos >= count($data) || ($data[$pos]['level'] <= $level+1 && strnatcmp(utf8_encodeFN($data[$pos]['id']), utf8_encodeFN($tmp_ns)) > 0)) 
+			{
+				array_splice($data, $pos, 0, array(array('level' => $level+1, 'id' => $tmp_ns, 'open' => 'true')));
+				break;
+			}
+
+			++$pos;
+		}
+	}
+
+	//inserted by Noah Harvey (nharvey@spsu.edu)
+
+	//print tree using scrollspy like theme
+	if(count($data) == 0)
+	{
+		return '';
+	}
+
+	$curlevel = 2;//the current level starts at level 2 because we're skipping the page title
+	$out = '<ul id="mediatree_top">';
+	$heading_num = array(1=>0,2=>0);
+
+	foreach($data as $tocitem)
+	{
+		/** skip level one as it is the page title */
+		if($tocitem['level'] == 1)
+			continue;
+
+		if ($tocitem['level'] > $curlevel)
+			$out .= '<ul>';
+		elseif($tocitem['level'] < $curlevel)
+		{
+			//reset the heading 
+			$heading_num[$curlevel-1] = 0;
+			$out .= '</ul>';
+		}
+		$curlevel = $tocitem['level'];
+		
+		isset($tocitem['hid']) ? $href = '#'.$tocitem['hid'] : $href = $tocitem['link'];
+
+		$out .= "<li>";
+
+		/** set the heading number */
+		$heading_num[$curlevel-1] += 1;
+
+		/** print out the heading number */
+		$headtxt = implode(".",array_slice($heading_num,0,2,true));
+		if($heading_num[3] != 0)
+			$headtxt .= ".".implode(".",array_slice($heading_num,2,NULL,true));
+		$out .= "<b>".$headtxt."</b> ";
+
+		/** printout the text of the heading */
+		$out .= "<a href='".$href."'>".$tocitem['title']."</a>";
+		$out .= "</li>";
+	}
+	for($i = 1; $i < $curlevel; $i++)
+	{
+		$out .= '</ul>';
+	}
+	$out .= '</ul>';
+
+	return $out;
+}

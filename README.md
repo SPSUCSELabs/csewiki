@@ -20,11 +20,12 @@ Administrator: nharvey@spsu.edu
 
 Todo
 ----
-- design base for template
-- create logo
-- deploy installed website to testing site
+See the todo page at <csewiki.spsu.edu>
+
 - create intro page
 - get topic list for pages from tutors and lab assistants
 - add admins/writer users to wiki
 - backup on github (double confirm with Gregg)
 - gather desired end-user features
+- write plugin for media mangement 
+

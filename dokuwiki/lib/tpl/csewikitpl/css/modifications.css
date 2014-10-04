@@ -78,7 +78,8 @@ body
 	height: auto !important;
 }
 
-#toc
+#toc,
+#mediatree
 {
 	/*margin-top: 20px;*/
 
@@ -87,7 +88,7 @@ body
 	/*padding-left: 1em;*/
 }
 
-#toc ul 
+#toc ul
 {
 	/*display: inline-block;*/
 	padding-left: 2em;
@@ -165,3 +166,28 @@ body
 	min-height: 32em !important;
 }
 
+#mediaPgContainer
+{
+	margin-top: 2em;
+}
+
+#media__ns
+{
+	display: none;
+}
+
+#media__tree ul
+{
+	padding-left: 1em;
+}
+
+#media__tree > ul
+{
+	padding-left: 0px;
+}
+
+#media__tree div.li
+{
+	padding-left: 0.25em;
+	display: inline;
+}

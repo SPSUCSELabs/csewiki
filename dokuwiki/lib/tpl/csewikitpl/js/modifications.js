@@ -42,12 +42,15 @@ $.extend({
     }
 });
 
-$.fn.extend({
-    replaceTag: function (newTagObj, keepProps) {
-        this.each(function() {
-            $.replaceTag(this, newTagObj, keepProps);
-        });
-    }
+$.fn.extend(
+{
+	replaceTag: function (newTagObj, keepProps) 
+	{
+	  this.each(function() 
+		{
+	    $.replaceTag(this, newTagObj, keepProps);
+		});
+	}
 });
 
 /*
@@ -90,6 +93,15 @@ function showButtonsBoostrap()
 	// make edit and other submit buttons to show in bootstrap style
 	$('input[type=\"submit\"], input[type=\"reset\"]').removeClass('button').addClass('btn btn-default btn-sm');
 	$('input[value=\"Edit\"][type=\"submit\"]').addClass('pull-right');
+
+
+	//$('.qq-upload-button').waitUntilExists(function()
+	//{
+		//$('.qq-upload-button').addClass('label label-default');
+		////$('.qq-action-container input[type=\"submit\"]).
+		//$('input[type=\"submit\"], input[type=\"reset\"]').removeClass('button').addClass('btn btn-default btn-sm');
+		//$('input[value=\"Edit\"][type=\"submit\"]').addClass('pull-right');
+	//});
 }
 
 function cleanEditorPage()
@@ -122,6 +134,10 @@ function fixEditButtons()
 
 	//add a clearer class below since they are pulled right
 	$('input[value=\"Edit\"][type=\"submit\"]').after("<div class='clearer'>");
+}
+
+function setMediaThumbBG()
+{
 }
 
 $(function()
