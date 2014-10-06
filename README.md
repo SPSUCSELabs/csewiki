@@ -27,5 +27,4 @@ See the todo page at <csewiki.spsu.edu>
 - add admins/writer users to wiki
 - backup on github (double confirm with Gregg)
 - gather desired end-user features
-- write plugin for media mangement 
 
