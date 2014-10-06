@@ -12,7 +12,9 @@ function printTree($data)
 		//make the id and the label the same
 
 		if ($tocitem['level'] > $curlevel)
-			$out .= '<ul>';
+		{
+			$out .= '<ul id="navl'.$tocitem['level'].'class="">';
+		}
 		elseif($tocitem['level'] < $curlevel)
 		{
 			//reset the heading 
@@ -154,9 +156,6 @@ function csewiki_media()
 
 	//alternate bg colors for filelist
 	$("#mediamanager__page #filelist div.panelContent ul.thumbs li:nth-child(odd)").addClass("bgodd");
-
-	//remove link classes
-	//$("#mediamanager__page #namespaces div.li a.idx_dir").removeClass("idx_dir selected");
 
 	//add clearer class so floats don't look weird
 	$("#mediamanager__page").append("<div class='clearer'></div>");

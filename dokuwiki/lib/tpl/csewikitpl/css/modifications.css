@@ -202,14 +202,14 @@ body
 	margin-top: 0px;
 }
 
+#mediamanager__page #ns_top
+{
+	padding-left: 0px !important;
+}
+
 #mediamanager__page #namespaces ul
 {
 	padding-left: 1em;
-}
-
-#mediamanager__page #namespaces > ul
-{
-	padding-left: 0px;
 }
 
 #mediamanager__page div.li
