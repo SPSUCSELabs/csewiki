@@ -1,0 +1,7 @@
+base   mediaModal
+author Noah Harvey
+email  nharvey@spsu.edu
+date   2014-10-05
+name   mediaModal
+desc   plugin to show media manager as a bootstrap modal box (for the csewikitpl template)
+url    
