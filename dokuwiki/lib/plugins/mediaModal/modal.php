@@ -1,5 +1,5 @@
 <?php 
-function printTree($data)
+function printTree($data,$id)
 {
 	if(count($data) == 0)
 		return '';
@@ -23,7 +23,7 @@ function printTree($data)
 		$curlevel = $tocitem['level'];
 		
 		//TODO: build link in var $href
-		$href="doku.php?id=start&do=media&ns=".$tocitem['id'];
+		$href="doku.php?id=".$id."&do=media&ns=".$tocitem['id'];
 
 		$out .= "<li>";
 
@@ -47,6 +47,7 @@ function csewiki_nstree($ns)
 {
 	global $conf;
 	global $lang;
+	global $ID;
 
 	// currently selected namespace
 	$ns	= cleanID($ns);
@@ -85,7 +86,7 @@ function csewiki_nstree($ns)
 			}
 	}
 
-	printTree($data);
+	printTree($data,$id);
 }
 
 function csewiki_media()
@@ -143,6 +144,12 @@ function csewiki_media()
 <script type="text/javascript">
 	//show the modal
 	$("#_mediamodal").modal('show');
+
+	//when the modal closes go back to the page it was on
+	$("#_mediamodal").on("hidden.bs.modal",function(e)
+	{
+		window.location="doku.php?id=<?php global $ID; echo $ID;?>";
+	});
 
 	//make filelist use navs 
 	$("#mediamanager__page #file ul.tabs").addClass("nav nav-tabs");
