@@ -136,8 +136,11 @@ function fixEditButtons()
 	$('input[value=\"Edit\"][type=\"submit\"]').after("<div class='clearer'>");
 }
 
-function setMediaThumbBG()
+function swapCSENavElems()
 {
+	//TODO: fix wrapper
+	$("div.li").wrap($("div.li a").detach());
+	$("#sidebar_content li a").html($("a div.li").html($("#sidebar_content li a").text()));
 }
 
 $(function()
@@ -149,6 +152,7 @@ $(function()
 	autoCollapse();
 	underlineMajorHeadings();
 	fixEditButtons();
+	swapCSENavElems();
 });
 
 
