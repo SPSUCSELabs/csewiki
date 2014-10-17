@@ -79,18 +79,22 @@ function _tpl_csewikitoc($data)
 		isset($tocitem['hid']) ? $href = '#'.$tocitem['hid'] : $href = $tocitem['link'];
 
 		$out .= "<li>";
+		$out .= "<div class=level".($curlevel-1).">";
 
 		/** set the heading number */
 		$heading_num[$curlevel-1] += 1;
 
 		/** print out the heading number */
 		$headtxt = implode(".",array_slice($heading_num,0,2,true));
+
 		if($heading_num[3] != 0)
 			$headtxt .= ".".implode(".",array_slice($heading_num,2,NULL,true));
+
 		$out .= "<b>".$headtxt."</b> ";
 
 		/** printout the text of the heading */
 		$out .= "<a href='".$href."'>".$tocitem['title']."</a>";
+		$out .= "</div>";
 		$out .= "</li>";
 	}
 	for($i = 1; $i < $curlevel; $i++)
@@ -172,7 +176,21 @@ function _tpl_toc_to_twitter_bootstrap_event_hander(&$event, $param)
 	global $conf;
 	//This is tied to the specific format of the DokuWiki TOC.
 	//echo _tpl_toc_to_twitter_bootstrap_event_hander_dump_level($event->data, true);
-	echo _tpl_csewikitoc($event->data);
+	$toc_content = _tpl_csewikitoc($event->data);
+	if($toc_content != '')
+	{
+		echo '<div id="toc" class="panel panel-default noli">
+				<div class="panel-heading">
+					<h3 class="panel-title" id="toc_title"><a data-toggle="collapse" href="#toc_collapse">Contents</a></h3>
+				</div>
+				<div id="toc_collapse" class="panel-collapse collapse in">
+					<div class="panel-body">
+					'.$toc_content.'	
+					</div>
+				</div>
+			</div>';
+	}
+	
 	//echo "<div>blarg</div>";
 }
 

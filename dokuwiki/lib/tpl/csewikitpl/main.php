@@ -75,16 +75,7 @@
 			<!-- /csenav -->
 			<!-- ******************** TOC ******************** -->
 			<div class="row">
-			<div id='toc' class="panel panel-default noli">
-				<div class="panel-heading">
-					<h3 class="panel-title" id="toc_title"><a data-toggle="collapse" href="#toc_collapse">Contents</a></h3>
-				</div>
-				<div id='toc_collapse'class="panel-collapse collapse in">
-					<div class="panel-body">
-						<?php _tpl_toc_to_twitter_bootstrap(); ?> 
-					</div>
-				</div>
-			</div>
+			<?php	_tpl_toc_to_twitter_bootstrap(); ?>
 			</div>
 			<!-- /TOC -->
 		</div>
@@ -111,5 +102,13 @@
 </div>
 <!-- /dokuwiki__site -->
 <script src="<?php echo tpl_getMediaFile(array("js/modifications.js")); ?>"></script>
+<?php global $conf; if($conf['_tpl_csewikitoc_data_empty']): ?>
+<script type="text/javascript" charset="utf-8">
+$(function()
+{
+	$('#toc_collapse').removeClass('in');
+});
+<?php endif; ?>
+</script>
 </body>
 </html>

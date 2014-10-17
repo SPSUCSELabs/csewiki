@@ -138,9 +138,14 @@ function fixEditButtons()
 
 function swapCSENavElems()
 {
-	//TODO: fix wrapper
-	$("div.li").wrap($("div.li a").detach());
-	$("#sidebar_content li a").html($("a div.li").html($("#sidebar_content li a").text()));
+	$("li.level1 div.li").each(function()
+	{
+		$(this).wrap($(this).children("a").detach());	
+	});
+	$("li.level1 a").each(function()
+	{
+		$(this).html($(this).children("div.li").html($(this).text()));
+	});
 }
 
 $(function()
