@@ -136,8 +136,16 @@ function fixEditButtons()
 	$('input[value=\"Edit\"][type=\"submit\"]').after("<div class='clearer'>");
 }
 
-function setMediaThumbBG()
+function swapCSENavElems()
 {
+	$("#sidebar_content li.level1 div.li").each(function()
+	{
+		$(this).wrap($(this).children("#sidebar_content a").detach());	
+	});
+	$("#sidebar_content li.level1 a").each(function()
+	{
+		$(this).html($(this).children("#sidebar_content div.li").html($(this).text()));
+	});
 }
 
 $(function()
@@ -149,6 +157,7 @@ $(function()
 	autoCollapse();
 	underlineMajorHeadings();
 	fixEditButtons();
+	swapCSENavElems();
 });
 
 

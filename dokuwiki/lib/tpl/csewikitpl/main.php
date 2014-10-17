@@ -15,6 +15,8 @@
 	<?php echo tpl_favicon(array('favicon', 'mobile')) ?>
 	<?php tpl_includeFile('meta.html') ?>
 	<link href="<?php echo tpl_getMediaFile(array("css/bootstrap.min.css")); ?>" rel="stylesheet">
+	<link href="<?php echo tpl_getMediaFile(array("css/util.css")); ?>" rel="stylesheet">
+	<link href="<?php echo tpl_getMediaFile(array("css/mediamngr.css")); ?>" rel="stylesheet">
 	<link href="<?php echo tpl_getMediaFile(array("css/modifications.css")); ?>" rel="stylesheet">
 
 	<script src="<?php echo tpl_getMediaFile(array("js/jquery-1.11.0.min.js")); ?>"></script>
@@ -58,33 +60,24 @@
 	<div class="container">
 	<div class="row">
 		<div id="sidebar" class="col-md-3 col-xs-12">
-			<!-- ******************** TOC ******************** -->
 			<div class="row">
-			<div id='toc' class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title" id="toc_title"><a data-toggle="collapse" href="#toc_collapse">Contents</a></h3>
-				</div>
-				<div id='toc_collapse'class="panel-collapse collapse in">
-					<div class="panel-body">
-						<?php _tpl_toc_to_twitter_bootstrap(); ?> 
-					</div>
-				</div>
-			</div>
-			</div>
-			<!-- /TOC -->
-			<div class="row">
-			<div id="news" class="panel panel-default">
+			<div id="csenav" class="panel panel-default">
 			  <div class="panel-heading">
-			    <h3 class="panel-title"><a data-toggle="collapse" href="#news_collapse">News</a></h3>
+			    <h3 class="panel-title"><a data-toggle="collapse" href="#news_collapse">Navigation</a></h3>
 			  </div>
 				<div id='news_collapse' class="panel-collapse collapse in">
-				  <div id="news_content" class="panel-body">
-				    Panel content
+				  <div id="sidebar_content" class="panel-body noli">
+						<?php tpl_include_page("sidebar",true,true); ?>
 				  </div>
 				</div>
 			</div>
 			</div>
-			<!-- /news -->
+			<!-- /csenav -->
+			<!-- ******************** TOC ******************** -->
+			<div class="row">
+			<?php	_tpl_toc_to_twitter_bootstrap(); ?>
+			</div>
+			<!-- /TOC -->
 		</div>
 		<!-- /sidebar -->
 		<!-- ******************** Page Content ******************** -->
@@ -109,5 +102,13 @@
 </div>
 <!-- /dokuwiki__site -->
 <script src="<?php echo tpl_getMediaFile(array("js/modifications.js")); ?>"></script>
+<?php global $conf; if($conf['_tpl_csewikitoc_data_empty']): ?>
+<script type="text/javascript" charset="utf-8">
+$(function()
+{
+	$('#toc_collapse').removeClass('in');
+});
+<?php endif; ?>
+</script>
 </body>
 </html>

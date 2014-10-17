@@ -659,10 +659,16 @@ function Doku_Handler_Parse_Media($match) {
     }
 
     //parse width and height
-    if(preg_match('#(\d+)(x(\d+))?#i',$param,$size)){
-        !empty($size[1]) ? $w = $size[1] : $w = null;
-        !empty($size[3]) ? $h = $size[3] : $h = null;
-    } else {
+    if(preg_match('#(\d+(em|%|px)?)(x((\d+)(em|%|px)?))?#i',$param,$size))
+    {
+	    !empty($size[1]) ? $w = $size[1] : $w = null;
+	    !empty($size[4]) ? $h = $size[4] : $h = null;
+
+        is_numeric($w) ? $w .= "px" : $w = $w;
+        is_numeric($h) ? $h .= "px" : $h = $h;
+    } 
+    else 
+    {
         $w = null;
         $h = null;
     }

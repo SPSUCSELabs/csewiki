@@ -101,7 +101,7 @@ function csewiki_media()
     if(isset($JUMPTO)) $image = $JUMPTO;
     if(isset($REV) && !$JUMPTO) $rev = $REV;
 
-    echo '<div id="mediamanager__page" class="row">'.NL;
+    echo '<div id="mediamanager__page" class="row noli">'.NL;
     echo '<div id="namespaces" class="col-xs-3">'.NL;
     echo '<h2>'.$lang['namespaces'].'</h2>'.NL;
     echo '<div class="panelHeader">';

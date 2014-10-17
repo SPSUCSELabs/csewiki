@@ -4,8 +4,7 @@ body
 }
 
 .navbar
-{
-	border-radius: 0px;
+{ border-radius: 0px;
 	background-color: #333 !important;
 	border-color: #222 !important;
 }
@@ -90,9 +89,23 @@ body
 
 #toc ul
 {
+	padding-left: 0;
+}
+
+#toc div.level1
+{
 	/*display: inline-block;*/
+	padding-left: 1em;
+}
+
+#toc div.level2
+{
 	padding-left: 2em;
-	list-style: none inside;
+}
+
+#toc div.level3
+{
+	padding-left: 3em;
 }
 
 #toc_top
@@ -118,14 +131,6 @@ body
 	float: right;
 }
 
-#news_content
-{
-	color: #111 !important;/*#4FC700 !important;*/
-}
-
-/*
- * sidebar settings
- */
 #sidebar .panel-heading
 {
 	background-color: #333 !important;
@@ -139,10 +144,41 @@ body
 
 #sidebar .panel-body
 {
-	background-color: #d0d0d0;
+	background-color: #e8e8e8;
 	border-bottom: thin solid #aaa;
 	border-right: thin solid #aaa;
 	border-left: thin solid #aaa;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+#sidebar .panel-body a
+{
+	color: #222;
+}
+
+#sidebar .panel-body a:hover
+{
+	text-decoration: none;
+}
+
+#sidebar .panel-body div.li:hover,
+#sidebar .panel-body li:hover
+{
+	background-color: #6DB33F !important;
+}
+
+#csenav ul 
+{
+	padding-left: 0;
+	margin-bottom: 0;
+}
+
+#csenav ul div.li
+{
+	padding-left: 1em;
+	padding-top: .15em;
+	padding-bottom: .15em;
 }
 
 /*
@@ -166,139 +202,4 @@ body
 	min-height: 32em !important;
 }
 
-#mediaPgContainer
-{
-	margin-top: 2em;
-}
 
-/* don't display media manager heading */
-#mediaModal #mediamanager__page > h1
-{
-	display: none;
-}
-
-#mediaModal #mediamanager__page hr
-{
-	display: none;
-}
-
-#mediamanager__page div
-{
-	height: auto !important;
-}
-
-#mediamanager__page ul
-{
-	list-style: none;
-}
-
-#mediamanager__page #filelist
-{
-	border-left: 1px solid #ccc;
-	border-right: 1px solid #ccc;
-}
-
-#mediamanager__page img
-{
-	max-width: 200px !important;
-}
-
-#mediamanager__page #namespaces h2
-{
-	margin-top: 0px;
-}
-
-#mediamanager__page #ns_top
-{
-	padding-left: 0px !important;
-}
-
-#mediamanager__page #namespaces ul
-{
-	padding-left: 1em;
-}
-
-#media__tree > ul
-{
-	padding-left: 0px;
-}
-
-#media__tree div.li
-{
-	padding-left: 0.25em;
-	display: inline;
-}
-
-#mediamanager__page div.li
-{
-	display: inline;
-	padding-left: .25em;
-}
-
-#mediamanager__page #filelist ul.tabs li
-{
-	display: inline-block;
-}
-
-#mediamanager__page #filelist div.panelHeader ul
-{
-	display: none;
-}
-
-#mediamanager__page #filelist div.panelContent ul
-{
-	padding-left: 0px;
-}
-
-#mediamanager__page #filelist div.panelContent ul li dd.date,
-#mediamanager__page #filelist div.panelContent ul li dd.filesize
-{
-	display: none;
-}
-
-#mediamanager__page #filelist div.panelContent ul.thumbs li 
-{
-	padding-top: 0.5em;
-	padding-left: 0.5em;
-}
-
-#mediamanager__page #filelist div.panelContent ul.thumbs li:hover
-{
-	background-color: #ddd;
-}
-
-.bgodd
-{
-	background-color: #eee;
-}
-
-#mediamanager__page #file div.panelContent ul.actions
-{
-	padding-left: 0px;
-	padding-top: 1em;
-}
-
-#mediamanager__page #file div.panelContent ul.actions li,
-#mediamanager__page #file div.panelContent ul.actions li form
-{
-	display: inline;
-}
-
-#mediamanager__page #file div.panelContent dl
-{
-	display: none;
-}
-
-#mediamanager__page div.qq-upload-button
-{
-	display: inline-block;
-	background-color: #fff;
-	border: 1px solid #ddd;
-	border-radius: 0.25em;
-	padding: 0.25em;
-}
-
-#mediamanager__page div.qq-upload-button:hover
-{
-	background-color: #eee;
-}
