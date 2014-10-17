@@ -103,6 +103,11 @@ body
 	padding-left: 2em;
 }
 
+#toc div.level3
+{
+	padding-left: 3em;
+}
+
 #toc_top
 {
 	padding-left: 0px !important;
