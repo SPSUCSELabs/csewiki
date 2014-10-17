@@ -148,6 +148,11 @@ function swapCSENavElems()
 	});
 }
 
+function removeCurId()
+{
+	$("span.curid a").unwrap();
+}
+
 $(function()
 {
 	makeDiscussionVisible();
@@ -157,6 +162,7 @@ $(function()
 	autoCollapse();
 	underlineMajorHeadings();
 	fixEditButtons();
+	removeCurId();
 	swapCSENavElems();
 });
 
