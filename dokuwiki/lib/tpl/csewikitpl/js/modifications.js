@@ -138,13 +138,13 @@ function fixEditButtons()
 
 function swapCSENavElems()
 {
-	$("li.level1 div.li").each(function()
+	$("#sidebar_content li.level1 div.li").each(function()
 	{
-		$(this).wrap($(this).children("a").detach());	
+		$(this).wrap($(this).children("#sidebar_content a").detach());	
 	});
-	$("li.level1 a").each(function()
+	$("#sidebar_content li.level1 a").each(function()
 	{
-		$(this).html($(this).children("div.li").html($(this).text()));
+		$(this).html($(this).children("#sidebar_content div.li").html($(this).text()));
 	});
 }
 
