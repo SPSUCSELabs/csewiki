@@ -153,9 +153,17 @@ function removeCurId()
 	$("span.curid a").unwrap();
 }
 
+function addTableClass()
+{
+	$("div.table").removeClass("table");
+	$("table").not(".table").addClass("table");
+	$("table.inline").not(".table").addClass("table");
+}
+
 $(function()
 {
 	makeDiscussionVisible();
+	addTableClass();
 	showButtonsBoostrap();
 	cleanConfigPage();
 	cleanEditorPage();
@@ -165,5 +173,4 @@ $(function()
 	removeCurId();
 	swapCSENavElems();
 });
-
 
