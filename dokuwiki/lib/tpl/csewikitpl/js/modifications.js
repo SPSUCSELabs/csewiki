@@ -1,11 +1,3 @@
-	/**
-	* @function
-	* @property {object} jQuery plugin which runs handler function once specified element is inserted into the DOM
-	* @param {function} handler A function to execute at the time when the element is inserted
-	* @param {bool} shouldRunHandlerOnce Optional: if true, handler is unbound after its first invocation
-	* @example $(selector).waitUntilExists(function);
-	*/
-	
 $.fn.waitUntilExists = function (handler, shouldRunHandlerOnce, isChild) 
 {
 	var found       = 'found';
@@ -160,6 +152,11 @@ function addTableClass()
 	$("table.inline").not(".table").addClass("table");
 }
 
+function changeEditTableButton()
+{
+	$("input[title='Table']").attr("value","Edit Table");
+}
+
 $(function()
 {
 	makeDiscussionVisible();
@@ -168,6 +165,7 @@ $(function()
 	cleanConfigPage();
 	cleanEditorPage();
 	autoCollapse();
+	changeEditTableButton();
 	underlineMajorHeadings();
 	fixEditButtons();
 	removeCurId();
