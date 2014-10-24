@@ -60,7 +60,7 @@ function autoCollapse()
 		else
 		{
 			$('#sidebar .collapse').removeClass('out');
-			$('#sidebar .collapse').addClass('in');
+			//$('#sidebar .collapse').addClass('in');
 		}   
 	});
 }

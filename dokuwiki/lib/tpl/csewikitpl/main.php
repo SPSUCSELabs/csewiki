@@ -4,6 +4,12 @@
 	@require_once(dirname(__FILE__).'/tpl_functions.php'); /* include hook for template functions */
 	
 	$showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER['REMOTE_USER'] );
+
+/**
+ * check to see if we need to show the TOC or not 
+ * this affects the collapsing of the navbar
+ */
+$showTOC = (($ACT == "show") && tpl_toc(true)) ? "" : "in";
 ?>
 <!DOCTYPE html>
 <html>
@@ -56,6 +62,7 @@
 	</nav>
 	<!-- /navbar -->
 </header>
+
 <content>
 	<div class="container">
 	<div class="row">
@@ -67,7 +74,7 @@
 				  <div class="panel-heading">
 				    <h3 class="panel-title"><a data-toggle="collapse" href="#news_collapse">Navigation</a></h3>
 				  </div>
-					<div id='news_collapse' class="panel-collapse collapse in">
+					<div id='news_collapse' class="panel-collapse collapse <?php echo $showTOC; ?> ">
 					  <div id="sidebar_content" class="panel-body noli">
 							<?php tpl_include_page("sidebar",true,true); ?>
 					  </div>
@@ -104,13 +111,5 @@
 </div>
 <!-- /dokuwiki__site -->
 <script src="<?php echo tpl_getMediaFile(array("js/modifications.js")); ?>"></script>
-<?php global $conf; if($conf['_tpl_csewikitoc_data_empty']): ?>
-<script type="text/javascript" charset="utf-8">
-$(function()
-{
-	$('#toc_collapse').removeClass('in');
-});
-<?php endif; ?>
-</script>
 </body>
 </html>
