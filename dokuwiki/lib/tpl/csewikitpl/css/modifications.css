@@ -77,7 +77,7 @@ body
 	height: auto !important;
 }
 
-#pagecontent img
+#pagecontent a.media img
 {
 	padding-right: 1em;
 }
