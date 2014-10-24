@@ -59,23 +59,25 @@
 <content>
 	<div class="container">
 	<div class="row">
+		<!-- ******************** sidebar ******************** -->
 		<div id="sidebar" class="col-md-3 col-xs-12">
+			<!-- ******************** csenav ******************** -->
 			<div class="row">
-			<div id="csenav" class="panel panel-default">
-			  <div class="panel-heading">
-			    <h3 class="panel-title"><a data-toggle="collapse" href="#news_collapse">Navigation</a></h3>
-			  </div>
-				<div id='news_collapse' class="panel-collapse collapse in">
-				  <div id="sidebar_content" class="panel-body noli">
-						<?php tpl_include_page("sidebar",true,true); ?>
+				<div id="csenav" class="panel panel-default">
+				  <div class="panel-heading">
+				    <h3 class="panel-title"><a data-toggle="collapse" href="#news_collapse">Navigation</a></h3>
 				  </div>
+					<div id='news_collapse' class="panel-collapse collapse in">
+					  <div id="sidebar_content" class="panel-body noli">
+							<?php tpl_include_page("sidebar",true,true); ?>
+					  </div>
+					</div>
 				</div>
-			</div>
 			</div>
 			<!-- /csenav -->
 			<!-- ******************** TOC ******************** -->
 			<div class="row">
-			<?php	_tpl_toc_to_twitter_bootstrap(); ?>
+				<?php	_tpl_toc_to_twitter_bootstrap(); ?>
 			</div>
 			<!-- /TOC -->
 		</div>
