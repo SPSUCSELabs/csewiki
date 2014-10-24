@@ -77,6 +77,11 @@ body
 	height: auto !important;
 }
 
+#pagecontent img
+{
+	padding: 1em;
+}
+
 #toc,
 #mediatree
 {

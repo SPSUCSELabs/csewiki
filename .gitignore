@@ -27,3 +27,4 @@ dokuwiki/data/media_attic/*
 dokuwiki/data/meta/*
 dokuwiki/data/tmp/*
 dokuwiki/lib/images/*/local/*
+temp/*
