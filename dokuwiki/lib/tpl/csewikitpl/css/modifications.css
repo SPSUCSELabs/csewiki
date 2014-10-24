@@ -82,6 +82,11 @@ body
 	padding-right: 1em;
 }
 
+#pagecontent table ul
+{
+	padding-left: 0;
+}
+
 #toc,
 #mediatree
 {
