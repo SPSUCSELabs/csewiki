@@ -13,7 +13,7 @@ body
 .navbar-nav > li > a
 {
 	/*color: #6DB33F !important;*/
-	color: #4FC700 !important;
+	color: #80d24a !important;
 }
 
 /*
@@ -126,7 +126,7 @@ body
 
 #toc_top a
 {
-	color: #111 !important; /*#4FC700 !important;*/
+	color: #111 !important; /*#80d24a !important;*/
 }
 
 #toc_title
@@ -149,7 +149,7 @@ body
 
 #sidebar .panel-heading h3
 {
-	color: #4FC700 !important;
+	color: #80d24a !important;
 }
 
 #sidebar .panel-body
