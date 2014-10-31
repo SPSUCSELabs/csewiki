@@ -1440,7 +1440,7 @@ class Doku_Renderer_xhtml extends Doku_Renderer {
                 return $title;
             }
             //add image tag
-            $ret .= '<img src="'.ml($src, array('w' => $width, 'h' => $height, 'cache' => $cache, 'rev'=>$this->_getLastMediaRevisionAt($src))).'"';
+            $ret .= '<img src="'.ml($src).'"';
             $ret .= ' class="media'.$align.'"';
 
             if($title) {
@@ -1450,13 +1450,18 @@ class Doku_Renderer_xhtml extends Doku_Renderer {
                 $ret .= ' alt=""';
             }
 
-            if(!is_null($width))
-                $ret .= ' width="'.$this->_xmlEntities($width).'"';
+			if(!is_null($width) || !is_null($height))
+			{
+				$ret .= 'style="';
+				if ( !is_null($width) )
+					$ret .= 'width: '.$width.';';
+				
+				if ( !is_null($height) )
+					$ret .= ' height: '.$height.';';
+				$ret .= '"';
+			}
 
-            if(!is_null($height))
-                $ret .= ' height="'.$this->_xmlEntities($height).'"';
-
-            $ret .= ' />';
+           $ret .= ' />';
 
         } elseif(media_supportedav($mime, 'video') || media_supportedav($mime, 'audio')) {
             // first get the $title
