@@ -86,14 +86,7 @@ function showButtonsBoostrap()
 	$('input[type=\"submit\"], input[type=\"reset\"]').removeClass('button').addClass('btn btn-default btn-sm');
 	$('input[value=\"Edit\"][type=\"submit\"]').addClass('pull-right');
 
-
-	//$('.qq-upload-button').waitUntilExists(function()
-	//{
-		//$('.qq-upload-button').addClass('label label-default');
-		////$('.qq-action-container input[type=\"submit\"]).
-		//$('input[type=\"submit\"], input[type=\"reset\"]').removeClass('button').addClass('btn btn-default btn-sm');
-		//$('input[value=\"Edit\"][type=\"submit\"]').addClass('pull-right');
-	//});
+	//make select image buttons show as bootstrap buttons
 }
 
 function cleanEditorPage()
@@ -156,6 +149,7 @@ function changeEditTableButton()
 {
 	$("input[title='Table']").attr("value","Edit Table");
 }
+
 
 $(function()
 {

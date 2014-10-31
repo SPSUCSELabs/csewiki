@@ -92,6 +92,7 @@ $showTOC = (($ACT == "show") && tpl_toc(true)) ? "" : "in";
 		<!-- ******************** Page Content ******************** -->
 		<div id="pagecontainer" class="col-md-9 col-xs-12">
 		<div id="pagecontent">
+			<?php if($display_msg) html_msgarea(); ?>
 			<?php tpl_flush(); ?>
 			<?php tpl_content(false); ?>
 			<div class="clearer"></div>
