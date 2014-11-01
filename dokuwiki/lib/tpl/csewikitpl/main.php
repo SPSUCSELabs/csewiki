@@ -22,7 +22,6 @@ $showTOC = (($ACT == "show") && tpl_toc(true)) ? "" : "in";
 	<?php tpl_includeFile('meta.html') ?>
 	<link href="<?php echo tpl_getMediaFile(array("css/bootstrap.min.css")); ?>" rel="stylesheet">
 	<link href="<?php echo tpl_getMediaFile(array("css/util.css")); ?>" rel="stylesheet">
-	<link href="<?php echo tpl_getMediaFile(array("css/mediamngr.css")); ?>" rel="stylesheet">
 	<link href="<?php echo tpl_getMediaFile(array("css/modifications.css")); ?>" rel="stylesheet">
 
 	<script src="<?php echo tpl_getMediaFile(array("js/jquery-1.11.0.min.js")); ?>"></script>

@@ -87,6 +87,10 @@ function showButtonsBoostrap()
 	$('input[value=\"Edit\"][type=\"submit\"]').addClass('pull-right');
 
 	//make select image buttons show as bootstrap buttons
+	$('div.qq-upload-button').waitUntilExists(function()
+	{
+		$('div.qq-upload-button').addClass("btn btn-default btn-sm");
+	});
 }
 
 function cleanEditorPage()
