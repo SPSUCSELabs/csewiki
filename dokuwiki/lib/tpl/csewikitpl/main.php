@@ -9,7 +9,8 @@
  * check to see if we need to show the TOC or not 
  * this affects the collapsing of the navbar
  */
-$showTOC = (($ACT == "show") && tpl_toc(true)) ? "" : "in";
+$showTOC = "in"; //for now expand the navbar
+//$showTOC = (($ACT == "show") && tpl_toc(true)) ? "" : "in";
 
 $display_msg = isset($_SERVER['REMOTE_USER']); 
 ?>
