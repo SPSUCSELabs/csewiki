@@ -10,6 +10,8 @@
  * this affects the collapsing of the navbar
  */
 $showTOC = (($ACT == "show") && tpl_toc(true)) ? "" : "in";
+
+$display_msg = isset($_SERVER['REMOTE_USER']); 
 ?>
 <!DOCTYPE html>
 <html>
