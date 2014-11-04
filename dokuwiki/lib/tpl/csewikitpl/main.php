@@ -114,4 +114,8 @@ $display_msg = isset($_SERVER['REMOTE_USER']);
 <!-- /dokuwiki__site -->
 <script src="<?php echo tpl_getMediaFile(array("js/modifications.js")); ?>"></script>
 </body>
+<?php 
+	/* call the indexer bug so that the pages will show up when searched for */
+	tpl_indexerWebBug();
+?>
 </html>
