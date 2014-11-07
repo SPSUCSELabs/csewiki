@@ -183,7 +183,7 @@ function _tpl_toc_to_twitter_bootstrap_event_hander(&$event, $param)
 				<div class="panel-heading">
 					<h3 class="panel-title" id="toc_title"><a data-toggle="collapse" href="#toc_collapse">Contents</a></h3>
 				</div>
-				<div id="toc_collapse" class="panel-collapse collapse in">
+				<div id="toc_collapse" class="panel-collapse collapse">
 					<div class="panel-body">
 					'.$toc_content.'	
 					</div>

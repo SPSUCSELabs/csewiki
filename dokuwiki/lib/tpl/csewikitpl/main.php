@@ -9,7 +9,7 @@
  * check to see if we need to show the TOC or not 
  * this affects the collapsing of the navbar
  */
-$showTOC = "in"; //for now expand the navbar
+//$showTOC = "in"; //for now expand the navbar
 //$showTOC = (($ACT == "show") && tpl_toc(true)) ? "" : "in";
 
 $display_msg = isset($_SERVER['REMOTE_USER']); 
@@ -70,13 +70,18 @@ $display_msg = isset($_SERVER['REMOTE_USER']);
 	<div class="row">
 		<!-- ******************** sidebar ******************** -->
 		<div id="sidebar" class="col-md-3 col-xs-12">
+			<!-- ******************** TOC ******************** -->
+			<div class="row">
+				<?php	_tpl_toc_to_twitter_bootstrap(); ?>
+			</div>
+			<!-- /TOC -->
 			<!-- ******************** csenav ******************** -->
 			<div class="row">
 				<div id="csenav" class="panel panel-default">
 				  <div class="panel-heading">
 				    <h3 class="panel-title"><a data-toggle="collapse" href="#news_collapse">Navigation</a></h3>
 				  </div>
-					<div id='news_collapse' class="panel-collapse collapse <?php echo $showTOC; ?> ">
+					<div id='news_collapse' class="panel-collapse collapse in">
 					  <div id="sidebar_content" class="panel-body noli">
 							<?php tpl_include_page("sidebar",true,true); ?>
 					  </div>
@@ -84,11 +89,6 @@ $display_msg = isset($_SERVER['REMOTE_USER']);
 				</div>
 			</div>
 			<!-- /csenav -->
-			<!-- ******************** TOC ******************** -->
-			<div class="row">
-				<?php	_tpl_toc_to_twitter_bootstrap(); ?>
-			</div>
-			<!-- /TOC -->
 		</div>
 		<!-- /sidebar -->
 		<!-- ******************** Page Content ******************** -->
