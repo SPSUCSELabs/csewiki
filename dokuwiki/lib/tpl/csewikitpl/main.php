@@ -27,6 +27,10 @@ $display_msg = isset($_SERVER['REMOTE_USER']);
 	<link href="<?php echo tpl_getMediaFile(array("css/util.css")); ?>" rel="stylesheet">
 	<link href="<?php echo tpl_getMediaFile(array("css/modifications.css")); ?>" rel="stylesheet">
 
+	<?php if($ACT == 'media'): //inclue mediamodal css file if needed?>
+		<link href="<?php echo tpl_getMediaFile(array("css/mediamngr.css")); ?>" rel="stylesheet">
+	<?php endif; ?>
+
 	<script src="<?php echo tpl_getMediaFile(array("js/jquery-1.11.0.min.js")); ?>"></script>
 	<script src="<?php echo tpl_getMediaFile(array("js/bootstrap.min.js")); ?>"></script>
 
