@@ -28,3 +28,8 @@ Maintainers
 -----------
 theNerd247 (nharvey@spsu.edu)
 
+[dokuwiki]: https://www.dokuwiki.org/dokuwiki
+[Bootstrap 3.0]: http://getbootstrap.com/
+[writing page]: http://csewiki.spsu.edu/csewiki/dokuwiki/doku.php?id=wiki:writing
+[SPSUCSELabs]: https://github.com/SPSUCSELabs
+[pull request]: https://help.github.com/articles/creating-a-pull-request/
