@@ -33,3 +33,4 @@ theNerd247 (nharvey@spsu.edu)
 [writing page]: http://csewiki.spsu.edu/csewiki/dokuwiki/doku.php?id=wiki:writing
 [SPSUCSELabs]: https://github.com/SPSUCSELabs
 [pull request]: https://help.github.com/articles/creating-a-pull-request/
+[Fork]: https://help.github.com/articles/fork-a-repo/
